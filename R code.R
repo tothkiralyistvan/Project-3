@@ -12,4 +12,4 @@ dataset <- read_sav("location")
 View(dataset)
 
 names(dataset)
-glimpse(dataset)
+glimpse(dataset)  
