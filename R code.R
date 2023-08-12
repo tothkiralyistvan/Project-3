@@ -36,3 +36,6 @@ data_new <- data_new %>%
 
 # verify recoding
 summary(data_new)
+
+# recode place of residence
+freq(data_new$Jelenleghollaksz)
