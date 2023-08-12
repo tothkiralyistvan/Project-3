@@ -39,3 +39,12 @@ summary(data_new)
 
 # recode place of residence
 freq(data_new$Jelenleghollaksz)
+
+data_new <- data_new %>% 
+  mutate(residence = recode(Jelenleghollaksz,
+                            'Külföldön' = 1,
+                            'Magyarországon' = 0) %>% 
+           as.numeric()) %>% 
+  select(-Jelenleghollaksz)
+
+freq(data_new$residence)
