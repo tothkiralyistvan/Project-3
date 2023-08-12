@@ -30,3 +30,9 @@ data_new <- dataset %>%
     ~ ifelse(. < 1 | . > 7, NA, .))
 
 glimpse(data_new)
+
+data_new <- data_new %>% 
+  select(-one_of(removed_cols))
+
+# verify recoding
+summary(data_new)
