@@ -48,3 +48,6 @@ data_new <- data_new %>%
   select(-Jelenleghollaksz)
 
 freq(data_new$residence)
+
+# recode family status
+freq(data_new$Családiállapot)
