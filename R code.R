@@ -51,3 +51,11 @@ freq(data_new$residence)
 
 # recode family status
 freq(data_new$Családiállapot)
+
+data_new <- data_new %>% 
+  mutate(family_status = case_when(
+    Családiállapot %in% c('alapvetően egyedülálló, de vannak alkalmi kapcsolataim', 'egyedülálló', 'elvált') ~ 0,
+    Családiállapot %in% c('alapvetően párkapcsolatban, de emellett előfordul(nak) alkalmi kapcsolat(ok) is', 'eljegyzett', 'házas', 'párkapcsolatban és egy háztartásban élünk a partneremmel', 'párkapcsolatban, de külön háztartásban élünk a partneremmel') ~ 1,
+    TRUE ~ NA_integer_
+  )) %>% 
+  select(-Családiállapot)
