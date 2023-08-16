@@ -22,3 +22,11 @@ dataset <- dataset %>%
 
 # look at summaries to identify variables that need to be manipulated
 summary(dataset)
+
+# recode all 1-7 scaled variables to 1-7, outlier values are NAs
+data_new <- dataset %>% 
+  mutate_at(
+    vars(surg1:online7),
+    ~ ifelse(. < 1 | . > 7, NA, .))
+
+glimpse(data_new)
