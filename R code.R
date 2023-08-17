@@ -59,3 +59,8 @@ data_new <- data_new %>%
     TRUE ~ NA_integer_
   )) %>% 
   select(-Családiállapot)
+
+glimpse(data_new)
+
+freq(data_new$Egyátlagoshétköznaponhányóraszabadidővelrendelkezel)
+freq(data_new$Egyátlagoshétvéginaponhányóraszabadidővelrendelkezel)
