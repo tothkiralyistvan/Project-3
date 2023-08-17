@@ -64,3 +64,9 @@ glimpse(data_new)
 
 freq(data_new$Egyátlagoshétköznaponhányóraszabadidővelrendelkezel)
 freq(data_new$Egyátlagoshétvéginaponhányóraszabadidővelrendelkezel)
+
+data_new <- data_new %>%
+  rename(time_weekday = Egyátlagoshétköznaponhányóraszabadidővelrendelkezel,
+         time_weekend = Egyátlagoshétvéginaponhányóraszabadidővelrendelkezel) %>% 
+  mutate(time_weekday = ifelse(time_weekday > 720, NA, time_weekday),
+         time_weekend = ifelse(time_weekend > 720, NA, time_weekend))
