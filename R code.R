@@ -70,3 +70,14 @@ data_new <- data_new %>%
          time_weekend = Egyátlagoshétvéginaponhányóraszabadidővelrendelkezel) %>% 
   mutate(time_weekday = ifelse(time_weekday > 720, NA, time_weekday),
          time_weekend = ifelse(time_weekend > 720, NA, time_weekend))
+
+glimpse(data_new)
+freq(data_new$time_weekday)
+freq(data_new$time_weekend)
+
+summary(data_new)
+
+data_new <- data_new %>% 
+  select(-one_of(removed_cols))
+
+glimpse(data_new)
