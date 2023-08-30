@@ -19,3 +19,6 @@ removed_cols <- c("series_add", "sal2_di", "sal2_di", "tol3_di", "mood6_di", "re
 
 dataset <- dataset %>% 
   select(-one_of(removed_cols))
+
+# look at summaries to identify variables that need to be manipulated
+summary(dataset)
