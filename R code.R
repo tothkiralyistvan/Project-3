@@ -94,20 +94,3 @@ list_onli <- c("online1", "online2", "online4", "online5", "online6", "online7")
 list_onfe <- c("onfejlesztes1", "onfejlesztes2", "onfejlesztes3", "onfejlesztes4", "onfejlesztes5", "onfejlesztes6")
 list_bunt <- c("buntudat1", "buntudat2", "buntudat3", "buntudat4", "buntudat5", "buntudat6")
 list_prob <- c("sal1", "sal2", "tol3", "tol4", "erz5", "erz6", "rel7", "rel8", "meg9", "meg10", "kon11", "kon12", "pro13", "pro14")
-
-# descriptives 
-averages <- data_new %>%
-  transmute(surg_m = mean_n(select(., all_of(list_surg)), n = .5),
-            gyasz_m = mean_n(select(., all_of(list_gyasz)), n = .5),
-            teli_m = mean_n(select(., all_of(list_teli)), n = .5),
-            menny_m = mean_n(select(., all_of(list_menny)), n = .5),
-            cont_m = mean_n(select(., all_of(list_cont)), n = .5),
-            iden_m = mean_n(select(., all_of(list_iden)), n = .5),
-            offl_m = mean_n(select(., all_of(list_offl)), n = .5),
-            onli_m = mean_n(select(., all_of(list_onli)), n = .5),
-            onfe_m = mean_n(select(., all_of(list_onfe)), n = .5),
-            bunt_m = mean_n(select(., all_of(list_bunt)), n = .5),
-            prob_m = mean_n(select(., all_of(list_prob)), n = .5))
-
-describe(averages)
-descr(averages)
